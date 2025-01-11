@@ -1,11 +1,12 @@
 def main():
     book_file_path = "books/frankenstein.txt"
-    # word_count = count_words(get_book_contents(book_file_path))
-    # print(f"{word_count} words found in the book: Frankenstein!")
+    word_count = count_words(get_book_contents(book_file_path))
     character_count = count_characters(get_book_contents(book_file_path))
-    print("An list of times each character was used in the book: Frankenstein.")
+    print(f"--- Begin report of {book_file_path} ---")
+    print(f"{word_count} words found in the document\n")
     for key, val in character_count.items():
-        print(f"Character: {key} has been used {val} times!")
+        print(f"The '{key}' character was found {val} times")
+    print("--- End report ---")
 
 def get_book_contents(file_path):
     with open(file_path, 'r') as file:
